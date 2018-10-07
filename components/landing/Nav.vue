@@ -11,13 +11,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#portfolio">Main</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" v-on:click="goMenu('portfolio')" href="#portfolio">Main</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#about">About</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" v-on:click="goMenu('about')" href="#about">About</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" v-on:click="goMenu('contact')" href="#contact">Contact</a>
             </li>
           </ul>
         </div>
@@ -28,8 +28,18 @@
 </template>
 <script>
 
-export default {
+export default {  
 
+  mounted() {
+    
+  },
+
+  methods: {
+    goMenu(hash) {      
+      this.$emit('goMenu', hash)
+    }  
+  }
+  
 }
 </script>
 <style scoped>

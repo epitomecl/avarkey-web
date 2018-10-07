@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Nav />
+    <Nav v-on:goMenu="onGoMenu" />
 
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
@@ -12,6 +12,9 @@
       </div>
     </header>
 
+    <button v-scroll-to="{ element: '#about', easing: 'linear' }">
+    Scroll to #element
+    </button>
 
     <!-- Portfolio Grid Section -->
     <section class="portfolio" id="portfolio">
@@ -215,14 +218,24 @@
 <script>
 import Nav from '~/components/landing/Nav.vue'
 
+
 export default {
   components: {
     Nav
   },
 
   mounted() {
+    console.log($(window)); 
+    
+  },
 
-  }
+  methods: {
+    onGoMenu(hash) {      
+      if(hash){
+        this.$scrollTo(`#${hash}`, 500)                
+      }
+    }
+  }  
 }
 </script>
 <style scoped>
