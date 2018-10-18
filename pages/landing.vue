@@ -16,24 +16,8 @@
     <section id="generate">
       <div class="container">
         <h2 class="text-center text-uppercase text-secondary mb-0">Generate avarkey</h2>
-        <hr class="star-dark mb-5">
-        <div class="row">
-          <div class="col-lg-8 mx-auto">            
-            <form name="generate" id="generateForm" novalidate="novalidate">
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Address</label>
-                  <input class="form-control" id="name" type="text" placeholder="Address" required="required" data-validation-required-message="Please enter your address.">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>              
-              <div id="success"></div>
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-xl" id="generateButton">Generate Avarkey</button>
-              </div>
-            </form>
-          </div>
-        </div>
+        <hr class="star-dark mb-5">        
+        <Gavarkey />
       </div>
     </section>
 
@@ -205,11 +189,13 @@
 
 <script>
 import Nav from '~/components/landing/Nav.vue'
+import Gavarkey from '~/components/landing/Gavarkey.vue'
 
 
 export default {
   components: {
-    Nav
+    Nav,
+    Gavarkey
   },
 
   mounted() {
