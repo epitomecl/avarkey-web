@@ -62,6 +62,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    vendor: ['~/util/getContract', '~/util/getWeb3', '~/util/pollWeb3'],
     /*
     ** You can extend webpack config here
     */
@@ -81,6 +82,6 @@ module.exports = {
       new webpack.ProvidePlugin({
         $: 'jquery'
       })
-    ]
+    ]    
   }
 }
