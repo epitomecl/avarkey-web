@@ -84,3 +84,5 @@ dist
 .key
 
 .DS_Store
+
+truffle/build

@@ -4,15 +4,14 @@
 
     <!-- <b-collapse id="collapse1" class="mt-2"> -->
       <b-card>
-      <div class='metamask-info'>
-        <p v-if="web3.isInjected" id="has-metamask"><i aria-hidden="true" class="fa fa-check"></i> Metamask installed</p>
-        <p v-else id="no-metamask"><i aria-hidden="true" class="fa fa-times"></i> Metamask not found</p>
-        <p>Network: {{ network }}</p>
-    	  <p>Account: {{ web3.coinbase }}</p>
-    	  <p>Balance: {{ web3.balance }} Wei </p>      
-        <p>networkId: {{web3.networkId}}</p>
-      </div>
-    </b-card>
+        <div class='metamask-info'>
+          <p v-if="web3.isInjected" id="has-metamask"><i aria-hidden="true" class="fa fa-check"></i> Metamask installed</p>
+          <p v-else id="no-metamask"><i aria-hidden="true" class="fa fa-times"></i> Metamask not found</p>
+          <p>Network: {{ network }}</p>
+      	  <p>Account: {{ web3.coinbase }}</p>
+      	  <p>Balance: {{ web3.balance }} Wei </p>        
+        </div>
+      </b-card>
     <!-- </b-collapse> -->
   </div>
 </template>
