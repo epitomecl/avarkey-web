@@ -5,7 +5,7 @@
     <!-- Header -->
     <header class="masthead bg-primary text-white text-center">
       <div class="container">
-        <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt="">
+        <!-- <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt=""> -->
         <h1 class="text-uppercase mb-0">Start Avarkey</h1>
         <hr class="star-light">
         <h2 class="font-weight-light mb-0">Generate a unique avatar from a public key</h2>
@@ -56,7 +56,7 @@
     <!-- Contact Section -->
     <section id="contact">
       <div class="container">
-        <h2 class="text-center text-uppercase text-secondary mb-0">Register an email</h2>
+        <h2 class="text-center text-uppercase text-secondary mb-0">Register your email</h2>
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-8 mx-auto">            
@@ -147,13 +147,17 @@ export default {
   methods: {
     onGoMenu(hash) {      
       if(hash){
-        this.$scrollTo(`#${hash}`, 500)                
+        this.$scrollTo(`#${hash}`, 500, {offset: -60})                
       }
     }
   }  
 }
 </script>
 <style scoped>
+
+.bg-primary {
+  background-color: #6ca8e8 !important;
+}
 
 section {
   padding: 6rem 0;

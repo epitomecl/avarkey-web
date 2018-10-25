@@ -47,6 +47,10 @@ export default {
 </script>
 <style scoped>
 
+.bg-secondary {
+  background: #035bb7 !important;
+}
+
 section {
   padding: 6rem 0;
 }
