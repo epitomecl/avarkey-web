@@ -20,4 +20,8 @@ module.exports = function(app, key) {
 	})
   })
 
+  app.get('/api', function(req, res) {
+    res.send('API root')
+  })
+
 }
