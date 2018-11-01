@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import Web3 from 'web3'
 import {NETWORKS} from './util/constants/networks'
 // import {mapState} from 'vuex'
 // import getWeb3 from './util/getWeb3'

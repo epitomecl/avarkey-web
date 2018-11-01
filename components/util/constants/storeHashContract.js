@@ -1,6 +1,6 @@
-const address = '0x00501d374c403d343a65e8575b2b2ff9ca35ddf8'
+const sh_address = '0x00501d374c403d343a65e8575b2b2ff9ca35ddf8'
 
-const abi = [
+const sh_abi = [
 	{
 		"constant": false,
 		"inputs": [
@@ -32,4 +32,4 @@ const abi = [
 ]
 
 
-export {address, ABI}
+export {sh_abi, sh_address}
