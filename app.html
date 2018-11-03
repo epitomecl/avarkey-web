@@ -4,9 +4,36 @@
   	<meta charset="utf-8">
     <title>Avarkey</title>
 
-    {{ HEAD }}
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128558984-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-128558984-1');
+	</script>
+
+    {{ HEAD }}    
   </head>
   <body {{ BODY_ATTRS }}>
   	{{ APP }}  	
+
+  	<!-- <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>  	
+  	<script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>
+
+
+  	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyCsVi15QQTbjtEYkl0nAiIxqldW3hU1orM",
+	    authDomain: "avarkey-bb036.firebaseapp.com",
+	    databaseURL: "https://avarkey-bb036.firebaseio.com",
+	    projectId: "avarkey-bb036",
+	    storageBucket: "",
+	    messagingSenderId: "725374065200"
+	  };
+	  firebase.initializeApp(config);
+	</script> -->
   </body>
 </html>

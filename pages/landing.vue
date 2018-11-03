@@ -60,18 +60,11 @@
         <hr class="star-dark mb-5">
         <div class="row">
           <div class="col-lg-8 mx-auto">            
-            <form name="sentMessage" id="contactForm" novalidate="novalidate">
-              <div class="control-group">
-                <div class="form-group floating-label-form-group controls mb-0 pb-2">
-                  <label>Name</label>
-                  <input class="form-control" id="name" type="text" placeholder="Name" required="required" data-validation-required-message="Please enter your name.">
-                  <p class="help-block text-danger"></p>
-                </div>
-              </div>
+            <form name="sentMessage" id="contactForm" novalidate="novalidate" @submit.prevent="registerEmail">              
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>Email</label>
-                  <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address.">
+                  <input class="form-control" id="email" type="email" placeholder="Email Address" required="required" data-validation-required-message="Please enter your email address." v-model="email">
                   <p class="help-block text-danger"></p>
                 </div>
               </div>                            
@@ -127,6 +120,8 @@
 </template>
 
 <script>
+import firebase from 'firebase'
+import firebaseStore from 'firebase/firestore'
 import Nav from '~/components/landing/Nav.vue'
 import Gavarkey from '~/components/landing/Gavarkey.vue'
 import Portfolio from '~/components/landing/Portfolio.vue'
@@ -139,9 +134,37 @@ export default {
     Portfolio
   },
 
-  mounted() {
-    console.log($(window)); 
-    
+  data() {
+    return {
+      email: null
+    }
+  },
+
+  computed: {
+    validation: function () {
+      const emailRE = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      return {        
+        email: emailRE.test(this.email)
+      }
+    },
+    isValid: function () {
+      const validation = this.validation
+      return Object.keys(validation).every(function (key) {
+        return validation[key]
+      })
+    }
+  },
+
+  mounted() {    
+    const config = {
+      apiKey: "AIzaSyCsVi15QQTbjtEYkl0nAiIxqldW3hU1orM",
+      authDomain: "avarkey-bb036.firebaseapp.com",
+      databaseURL: "https://avarkey-bb036.firebaseio.com",
+      projectId: "avarkey-bb036",
+      storageBucket: "",
+      messagingSenderId: "725374065200"
+    };
+    firebase.initializeApp(config);
   },
 
   methods: {
@@ -149,6 +172,25 @@ export default {
       if(hash){
         this.$scrollTo(`#${hash}`, 500, {offset: -60})                
       }
+    },
+
+    registerEmail() {
+      if(this.isValid){
+        const db = firebase.firestore()
+        db.collection("emails").add({
+          email: this.email
+        })
+        .then((docRef) => {
+          console.log("savedId:", docRef.id)
+          alert("Email registration completed..!")
+          this.email = null
+        })
+        .catch((error) => {
+          console.error("error:", error)
+        })          
+      } else {
+        alert("please confirm your email correctly")
+      }      
     }
   }  
 }
