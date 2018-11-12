@@ -11,19 +11,13 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" v-on:click="goMenu('generate')" href="#generate">Generate</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/landing">Main</a>
+            </li>            
+            <li class="nav-item mx-0 mx-lg-1">
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/wallet">Wallet</a>
             </li>
             <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" v-on:click="goMenu('portfolio')" href="#portfolio">Portfolio</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" v-on:click="goMenu('about')" href="#about">About</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" v-on:click="goMenu('contact')" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/mywallet">My Wallet</a>
+              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="/marketplace">Marketplace</a>
             </li>
           </ul>
         </div>
@@ -41,18 +35,12 @@ export default {
   },
 
   methods: {
-    goMenu(hash) {      
-      this.$emit('goMenu', hash)
-    }  
+    
   }
   
 }
 </script>
 <style scoped>
-
-.bg-secondary {
-  background: #035bb7 !important;
-}
 
 section {
   padding: 6rem 0;
