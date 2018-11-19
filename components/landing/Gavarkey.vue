@@ -50,6 +50,10 @@ export default {
           console.log("result", response)
           if(response.flag==1){
           	const imgData = response.result.imageData
+            const prefix = response.result.prefix
+            const category = response.result.category
+            const parts = response.result.parts
+            
           	this.genImgData = imgData
           	console.log(this.genImgData)
           }

@@ -85,6 +85,8 @@
           <div class="col-md-4 mb-5 mb-lg-0">
             <h4 class="mb-4">EpitomeCL</h4>            
             <h6>Creators</h6>
+            <div>Will Park</div>
+            <div>Marian Kulisch</div>
           </div>
           <div class="col-md-4 mb-5 mb-lg-0">            
             <ul class="list-inline mb-0">
