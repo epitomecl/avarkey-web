@@ -32,7 +32,7 @@ export default {
     return {
       loading: false,
       genImgData: null,
-      address: '1BoatSLRHtKNngkdXEeobR76b53LETtpyT'
+      address: 'thisismyavarkey'
     }
   },
 

@@ -85,7 +85,7 @@ export default {
 .portfolio .portfolio-item {
   position: relative;
   display: block;
-  max-width: 25rem;
+  max-width: 250px;
   margin-bottom: 15px;
 }
 
