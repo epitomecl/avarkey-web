@@ -21,6 +21,9 @@
       </div>
     </section>
 
+    <b-progress 
+                :variant="100"               
+    ></b-progress>
 
     <!-- Portfolio Grid Section -->
     <section class="portfolio" id="portfolio">
