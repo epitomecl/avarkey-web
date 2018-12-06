@@ -44,7 +44,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/vue-scrollto'
+    '~/plugins/vue-scrollto'    
   ],
 
   /*
@@ -54,14 +54,14 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt'
+    'bootstrap-vue/nuxt',
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Axios module configuration
   */
-  axios: {      
-    proxyHeaders: false,
-    credentials: false
+  axios: {       
+    credentials: true,    
   },
 
   /*

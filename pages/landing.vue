@@ -3,14 +3,15 @@
     <Nav v-on:goMenu="onGoMenu" />
 
     <!-- Header -->
-    <header class="masthead bg-primary text-white text-center">
-      <div class="container">
-        <!-- <img class="img-fluid mb-5 d-block mx-auto" src="img/profile.png" alt=""> -->
-        <h1 class="text-uppercase mb-0">Start Avarkey <b-badge class="badge">Beta</b-badge></h1>
-        <hr class="star-light">
-        <h2 class="font-weight-light mb-0">Generate a unique avatar from a public key</h2>
-      </div>
-    </header>    
+    <!-- <header class="masthead bg-primary text-white text-center"> -->
+      <v-parallax src="/bg-blue-min.jpg" class="bgParalax" height="480">
+        <div class="bgalpha masthead bg-primary text-white text-center">          
+          <h1 class="text-uppercase mb-0">Start Avarkey <b-badge class="badge">Beta</b-badge></h1>
+          <hr class="star-light">
+          <h2 class="font-weight-light mb-0">Generate a unique avatar from a public key</h2>
+        </div>
+      </v-parallax>      
+    <!-- </header>     -->
 
     <!-- generate Section -->
     <section id="generate">
@@ -22,7 +23,7 @@
     </section>
 
     <b-progress 
-                :variant="100"               
+        variant="100"               
     ></b-progress>
 
     <!-- Portfolio Grid Section -->
@@ -37,7 +38,7 @@
     <!-- About Section -->
     <section class="bg-primary text-white mb-0" id="about">
       <div class="container">
-        <h2 class="text-center text-uppercase text-white">About</h2>
+        <h2 class="text-center text-uppercase text-white second-title">About</h2>
         <hr class="star-light mb-5">
         <div class="row">
           <div class="col-lg-4 ml-auto">
@@ -93,8 +94,8 @@
         <div class="row">
           <div class="col-md-4 mb-5 mb-lg-0">
             <h4 class="mb-4">DEVELOPERS</h4>                        
-            <div class="creator">Will Park <a href="https://www.linkedin.com/in/elegantuniv/" target="_blank"><img class="fab" src="/linkedin.png" alt=""></a></div>
-            <div class="creator">Marian Kulisch <a href="https://www.linkedin.com/in/marian-kulisch-3b13483b/" target="_blank"><img class="fab" src="/linkedin.png" alt=""></a></div>
+            <div class="creator">Will Park <!-- <a href="https://www.linkedin.com/in/elegantuniv/" target="_blank"><img class="fab" src="/linkedin.png" alt=""></a> --></div>
+            <div class="creator">Marian Kulisch <!-- <a href="https://www.linkedin.com/in/marian-kulisch-3b13483b/" target="_blank"><img class="fab" src="/linkedin.png" alt=""></a> --></div>
           </div>
           <div class="col-md-4 mb-5 mb-lg-0">            
             <b-button class="btnDonate">Donate</b-button>
@@ -197,6 +198,26 @@ export default {
   background-color: #133e73 !important;
 }
 
+.bgParalax {
+  width: 100%;
+  
+  background: #fff;
+  opacity: .7;
+}
+
+.bgalpha {
+  width: 80%;
+  margin: 0 auto;
+  
+  background: #035bb7;
+  opacity: .9;
+  padding: 35px;
+}
+
+.text-secondary {
+  font-size: 2.2rem;
+}
+
 section {
   padding: 6rem 0;
 }
@@ -240,7 +261,7 @@ header .badge {
     padding-bottom: 6rem;
   }
   header.masthead h1 {
-    font-size: 4.75em;
+    font-size: 4em;
     line-height: 4rem;
   }
   header.masthead h2 {
@@ -265,6 +286,10 @@ header .badge {
   cursor: pointer;
 }
 
+#about .second-title{
+  font-size: 2rem;
+}
+
 #contact .hint {
   margin: 10px;
   color: #676363;
@@ -273,8 +298,8 @@ header .badge {
 }
 
 .footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   background-color: #2C3E50;
   color: #fff;
 }

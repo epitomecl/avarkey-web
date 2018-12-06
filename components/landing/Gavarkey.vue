@@ -1,13 +1,27 @@
 <template>
   <div>
-    <b-card>
+    <b-card>      
       <b-form @submit.prevent="generateAvatar">
-        <b-input-group>
-          <b-form-input id="ipAddress" type="text" placeholder="Please enter your address" v-model="address" ></b-form-input>
-          <b-input-group-append>
-            <b-btn variant="info" type="submit">Generate</b-btn>
-          </b-input-group-append>
-        </b-input-group>
+        <b-tabs>
+          <b-tab title="EOS" active>
+            <b-input-group>
+              <b-form-input type="text" placeholder="Please enter your address" v-model="address" ></b-form-input>
+              <b-input-group-append>
+                <b-btn variant="info" type="submit">Generate</b-btn>
+              </b-input-group-append>
+            </b-input-group>
+          </b-tab>
+          <b-tab title="Ethereum">
+            <b-input-group>
+              <b-form-input type="text" placeholder="Please enter your address" v-model="address2" ></b-form-input>
+              <b-input-group-append>
+                <b-btn variant="info" type="submit">Generate</b-btn>
+              </b-input-group-append>
+            </b-input-group>
+          </b-tab>
+        </b-tabs>
+
+        
       </b-form>
 
       <div id="imgBox">
@@ -32,7 +46,8 @@ export default {
     return {
       loading: false,
       genImgData: null,
-      address: 'thisismyavarkey'
+      address: 'thisismyavarkey',
+      address2: '0x3BDB8baC386815E07E0A089Dd8756FF32f678c63'
     }
   },
 
@@ -62,12 +77,44 @@ export default {
         }).finally(() => {
           this.loading = false
         })
+    },
+
+    test() {
+      const formData = {
+        module: 'Avatar',
+        walletAddress: this.address
+      }
+
+      this.$axios
+        .$post('http://13.209.194.1:5000/api/', qs.stringify(formData), { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin':'*' })
+        .then(response => {
+          console.log("result", response)
+          const data = response.data          
+          const imgData = data.imageData                        
+          this.genImgData = imgData                        
+        }).catch(error => {
+          console.log(error)
+        }).finally(() => {
+          this.loading = false
+        })
     }
   }
   
 }
 </script>
 <style scoped>
+.bgCoins .selEOS {
+  background: #6ba5d6;
+}
+
+.bgCoins .selEOS.active{
+
+}
+
+.bgCoins .selEther {
+  background: #90bd9a;
+}
+
 .spinner {
   width: 40px;
   height: 40px;

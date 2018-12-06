@@ -2,13 +2,14 @@
   <div>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
-      <div class="container">
+      <div class="row">
         <a class="navbar-brand js-scroll-trigger" href="#page-top"><img class="logo" src="/logo.png" alt=""></a>
+
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
+        <div class="collapse navbar-collapse" id="navbarResponsive">          
           <ul class="navbar-nav ml-auto">
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" v-on:click="goMenu('generate')" href="#generate">Generate</a>
@@ -87,7 +88,9 @@ section h2 {
 }
 
 #mainNav .navbar-nav {
+  position: absolute;
   margin-top: 1rem;
+  right: 0;
   letter-spacing: 0.0625rem;
 }
 
@@ -108,8 +111,10 @@ section h2 {
 }
 
 #mainNav .navbar-toggler {
+  position: absolute;
+  right: 20px;
   font-size: 80%;
-  padding: 0.8rem;
+  padding: 0.8rem;  
 }
 
 @media (min-width: 992px) {
@@ -123,9 +128,12 @@ section h2 {
     font-size: 2em;
     -webkit-transition: font-size 0.3s;
     transition: font-size 0.3s;
+    margin-left: 35px;
   }
   #mainNav .navbar-nav {
+    position: absolute;
     margin-top: 0;
+    right: 0;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
     color: #fff;
