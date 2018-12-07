@@ -64,6 +64,12 @@ module.exports = {
     credentials: true,    
   },
 
+  // axios: {
+  //   baseURL: 'http://13.209.194.1:3000/',
+  //   proxyHeaders: false,
+  //   credentials: false
+  // },
+
   /*
   ** Build configuration
   */
