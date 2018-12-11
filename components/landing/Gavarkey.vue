@@ -62,7 +62,7 @@ export default {
       this.$axios
         .$post('/api/genAvatar', qs.stringify({'address': this.address}))
         .then(response => {
-          console.log("result", response)
+          // console.log("result", response)
           if(response.flag==1){
           	const imgData = response.result.imageData
             const prefix = response.result.prefix
@@ -70,7 +70,7 @@ export default {
             const parts = response.result.parts
             
           	this.genImgData = imgData
-          	console.log(this.genImgData)
+          	// console.log(this.genImgData)
           }
         }).catch(error => {
           console.log(error)
