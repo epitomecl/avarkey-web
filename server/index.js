@@ -31,6 +31,8 @@ async function start() {
     await builder.build()
   }  
 
+  app.use(express.static(__dirname, { dotfiles: 'allow' } ));
+
   //Nagle Algorithm off
   app.use(function(req,res,next){
     req.connection.setNoDelay(true);
