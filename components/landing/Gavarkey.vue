@@ -86,7 +86,7 @@ export default {
       }
 
       this.$axios
-        .$post('http://13.209.194.1:5000/api/', qs.stringify(formData), { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin':'*' })
+        .$post('http://api.avarkey.com/api/', qs.stringify(formData), { 'Accept': 'application/json', 'Content-Type': 'application/x-www-form-urlencoded', 'Access-Control-Allow-Origin':'*' })
         .then(response => {
           console.log("result", response)
           const data = response.data          

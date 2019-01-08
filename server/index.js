@@ -11,8 +11,8 @@ const host = process.env.HOST || '0.0.0.0'
 const port = process.env.PORT || 3000
 
 const fs = require('fs')
-const key = JSON.parse(fs.readFileSync('server/.key', 'utf8'))
-
+// const key = JSON.parse(fs.readFileSync('server/.key', 'utf8'))
+const key = {}
 
 app.set('port', port)
 
@@ -69,19 +69,19 @@ async function start() {
   })
 
   //https server start  
-  const privateKey = fs.readFileSync('/etc/letsencrypt/live/avarkey.com/privkey.pem', 'utf8');
-  const certificate = fs.readFileSync('/etc/letsencrypt/live/avarkey.com/cert.pem', 'utf8');
-  const ca = fs.readFileSync('/etc/letsencrypt/live/avarkey.com/chain.pem', 'utf8');
-  const credentials = {
-    key: privateKey,
-    cert: certificate,
-    ca: ca
-  };
+  // const privateKey = fs.readFileSync('/etc/letsencrypt/live/avarkey.com/privkey.pem', 'utf8');
+  // const certificate = fs.readFileSync('/etc/letsencrypt/live/avarkey.com/cert.pem', 'utf8');
+  // const ca = fs.readFileSync('/etc/letsencrypt/live/avarkey.com/chain.pem', 'utf8');
+  // const credentials = {
+  //   key: privateKey,
+  //   cert: certificate,
+  //   ca: ca
+  // };
 
-  const httpsServer = https.createServer(credentials, app);
+  // const httpsServer = https.createServer(credentials, app);
 
-  httpsServer.listen(443, () => {
-    console.log('HTTPS Server running on port 443');
-  });
+  // httpsServer.listen(443, () => {
+  //   console.log('HTTPS Server running on port 443');
+  // });
 }
 start()
