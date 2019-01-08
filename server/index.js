@@ -61,24 +61,26 @@ async function start() {
   // Give nuxt middleware to express
   app.use(nuxt.render)
 
-  // Listen the server
-  app.listen(port, host)
-  consola.ready({
-    message: `Server listening on http://${host}:${port}`,
-    badge: true
-  })
+  // Listen the server for dev
+  // app.listen(port, host)
+  // consola.ready({
+  //   message: `Server listening on http://${host}:${port}`,
+  //   badge: true
+  // })
 
   //https server start  
-  // const privateKey = fs.readFileSync('/etc/letsencrypt/live/avarkey.com/privkey.pem', 'utf8');
-  // const certificate = fs.readFileSync('/etc/letsencrypt/live/avarkey.com/cert.pem', 'utf8');
-  // const ca = fs.readFileSync('/etc/letsencrypt/live/avarkey.com/chain.pem', 'utf8');
-  // const credentials = {
-  //   key: privateKey,
-  //   cert: certificate,
-  //   ca: ca
-  // };
+  const privateKey = fs.readFileSync('/etc/letsencrypt/live/avarkey.com-0001/privkey.pem', 'utf8');
+  const certificate = fs.readFileSync('/etc/letsencrypt/live/avarkey.com-0001/cert.pem', 'utf8');
+  const ca = fs.readFileSync('/etc/letsencrypt/live/avarkey.com-0001/chain.pem', 'utf8');
+  const credentials = {
+    key: privateKey,
+    cert: certificate,
+    ca: ca
+  };
 
-  // const httpsServer = https.createServer(credentials, app);
+  const httpsServer = https.createServer(credentials, (req, res) => {
+    console.log('HTTPS Server running on port 443');
+  }).listen(port)
 
   // httpsServer.listen(443, () => {
   //   console.log('HTTPS Server running on port 443');
