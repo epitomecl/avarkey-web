@@ -98,7 +98,7 @@
             <div class="creator">Marian Kulisch <!-- <a href="https://www.linkedin.com/in/marian-kulisch-3b13483b/" target="_blank"><img class="fab" src="/linkedin.png" alt=""></a> --></div>
           </div>
           <div class="col-md-4 mb-5 mb-lg-0">            
-            <b-button class="btnDonate">Donate</b-button>
+            <!-- <b-button class="btnDonate">Donate</b-button> -->
             <a href="mailto:willpark@epitomecl.com"><b-button class="btnContact">Contact Us</b-button></a>
           </div>
           <div class="col-md-4">
