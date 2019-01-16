@@ -60,15 +60,15 @@ module.exports = {
   /*
   ** Axios module configuration
   */
-  axios: {       
-    credentials: true,    
-  },
-
-  // axios: {
-  //   baseURL: 'http://13.209.194.1:3000/',
-  //   proxyHeaders: false,
-  //   credentials: false
+  // axios: {       
+  //   credentials: true,    
   // },
+
+  axios: {
+    baseURL: 'https://avarkey.com',
+    proxyHeaders: false,
+    credentials: false
+  },
 
   /*
   ** Build configuration
