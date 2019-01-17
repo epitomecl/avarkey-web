@@ -1,27 +1,13 @@
 <template>
   <div>
     <b-card>      
-      <b-form @submit.prevent="generateAvatar">
-        <b-tabs>
-          <b-tab title="EOS" active>
+      <b-form @submit.prevent="generateAvatar">        
             <b-input-group>
               <b-form-input type="text" placeholder="Please enter your address" v-model="address" ></b-form-input>
               <b-input-group-append>
                 <b-btn variant="info" type="submit">Generate</b-btn>
               </b-input-group-append>
-            </b-input-group>
-          </b-tab>
-          <b-tab title="Ethereum">
-            <b-input-group>
-              <b-form-input type="text" placeholder="Please enter your address" v-model="address2" ></b-form-input>
-              <b-input-group-append>
-                <b-btn variant="info" type="submit">Generate</b-btn>
-              </b-input-group-append>
-            </b-input-group>
-          </b-tab>
-        </b-tabs>
-
-        
+            </b-input-group>          
       </b-form>
 
       <div id="imgBox">

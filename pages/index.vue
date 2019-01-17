@@ -35,6 +35,15 @@
       </div>
     </section>
 
+    <!-- Use case -->
+    <section class="usecases" id="usecases">
+      <div class="container">
+        <h2 class="text-center text-uppercase text-secondary mb-0">Use Cases</h2>
+        <hr class="star-dark mb-5">
+        <Usecases />
+      </div>
+    </section>
+
     <!-- About Section -->
     <section class="bg-primary text-white mb-0" id="about">
       <div class="container">
@@ -122,13 +131,14 @@ import firebaseStore from 'firebase/firestore'
 import Nav from '~/components/landing/Nav.vue'
 import Gavarkey from '~/components/landing/Gavarkey.vue'
 import Portfolio from '~/components/landing/Portfolio.vue'
-
+import Usecases from '~/components/landing/Usecases.vue'
 
 export default {
   components: {
     Nav,
     Gavarkey,
-    Portfolio
+    Portfolio,
+    Usecases
   },
 
   data() {
@@ -274,11 +284,17 @@ header .badge {
   margin-bottom: -15px;
 }
 
+.usecases {
+  margin-bottom: -15px; 
+}
 
 @media (min-width: 576px) {
   .portfolio {
     margin-bottom: -30px;
   }  
+  .usecases {
+    margin-bottom: -30px;
+  }
 }
 
 .fab {
