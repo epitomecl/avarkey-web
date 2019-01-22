@@ -68,6 +68,12 @@ async function start() {
     badge: true
   })
 
+  process.on('uncaughtException', function(e) {
+    console.log('An error has occured. error is: %s and stack trace is: %s', e, e.stack);
+    console.log("Process will restart now.");
+    process.exit(1);
+  });
+
   //https server start  
   // const privateKey = fs.readFileSync('/etc/letsencrypt/live/avarkey.com-0001/privkey.pem', 'utf8');
   // const certificate = fs.readFileSync('/etc/letsencrypt/live/avarkey.com-0001/cert.pem', 'utf8');
