@@ -7,7 +7,7 @@ module.exports = function(app, key) {
 
 	const formData = {
 	  module: 'Avatar',
-	  walletAddress: address
+	  address: address
 	}
 
 	request.post({url:'https://api.avarkey.com/api/', formData: formData}, (err, httpResponse, body) => {
