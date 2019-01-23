@@ -10,7 +10,7 @@ module.exports = function(app, key) {
 	  address: address
 	}
 
-	request.post({url:'https://api.avarkey.com/api/', formData: formData}, (err, httpResponse, body) => {
+	request.post({url:'https://api.avarkey.com/', formData: formData}, (err, httpResponse, body) => {
 	  if (err) {
 	    console.error('err:', err)
 	    return res.json({'flag': 0})
